@@ -1,4 +1,4 @@
-<div class="bottom-article mb-3">
+<!-- <div class="bottom-article mb-3">
     <div class="d-flex justify-content-between">
         <div class="share-title text-muted d-flex"><i class="fa-solid fa-square-share-nodes"></i>  {{ __('frontend.share') }}</div>
         <ul class="social-network share d-flex">
@@ -30,4 +30,4 @@
                         class="fa-brands fa-tumblr"></i></a></li>
         </ul>
     </div>
-</div>
+</div> -->
