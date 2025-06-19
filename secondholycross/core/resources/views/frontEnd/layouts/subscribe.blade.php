@@ -1,4 +1,4 @@
-@if(Helper::GeneralSiteSettings("style_subscribe"))
+<!-- @if(Helper::GeneralSiteSettings("style_subscribe"))
     <div class="col-lg-4 col-md-12 footer-newsletter">
         <div class="footer-title">
             <h4>{{ __('frontend.newsletter') }}</h4>
@@ -9,4 +9,4 @@
         <button type="submit" id="subscribeFormSubmit">{{ __('frontend.subscribe') }}</button>
         {{Form::close()}}
     </div>
-@endif
+@endif -->

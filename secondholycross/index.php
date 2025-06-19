@@ -43,6 +43,10 @@ require __DIR__.'/core/vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+exec('php artisan config:clear');
+exec('php artisan cache:clear');
+exec('php artisan route:clear');
+exec('php artisan view:clear');
 
 $app = require_once __DIR__.'/core/bootstrap/app.php';
 
