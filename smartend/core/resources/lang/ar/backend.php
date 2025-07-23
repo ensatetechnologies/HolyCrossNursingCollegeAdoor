@@ -652,9 +652,10 @@ return array(
     // v9.1
     'clickToUseDragAndDropEditor' => 'إستخدم محرر السحب والإلقاء',
     'savePageToUseDragAndDropEditor' => 'قم بإضافة وحفظ الصفحة أولا إذا أردت إستخدام محرر السحب والإلقاء لتنسيق المحتوى',
-    'customFieldsType13' => 'إختيار من متعدد ( Radio )',
-    'customFieldsType14' => 'اختيار Checkbox',
-    'refreshAfterKEdit' => 'ستكون بحاجة لتحديث هذه الصفحة في حالة تم التعديل عن طريق محرر السحب والإلقاء',
+        'customFieldsType13' => 'اختيار ( Radio )',
+    'customFieldsType14' => 'مربع اختيار',
+    'customFieldsType16' => 'رابط URL',
+    'refreshAfterKEdit' => 'ستحتاج لتحديث الصفحة بعد التحديث عبر محرر السحب والإفلات',
 
     // v10.0
     'import' => 'إستيراد',

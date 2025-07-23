@@ -56,6 +56,13 @@
                     </div>
                     <div style="margin-bottom: 5px;">
                         <label class="ui-check ui-check-md">
+                            {!! Form::radio('type','16',(Session::get('WebmasterSectionField')->type==16) ? true : false, array('id' => 'type16','class'=>'has-value')) !!}
+                            <i class="dark-white"></i>
+                            {{ __('backend.customFieldsType16') }}
+                        </label>
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <label class="ui-check ui-check-md">
                             {!! Form::radio('type','4',(Session::get('WebmasterSectionField')->type==4) ? true : false, array('id' => 'type4','class'=>'has-value')) !!}
                             <i class="dark-white"></i>
                             {{ __('backend.customFieldsType4') }}

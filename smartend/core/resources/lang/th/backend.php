@@ -657,6 +657,7 @@ return array(
     'savePageToUseDragAndDropEditor' => 'Save page first if you want to use the drag & drop editor to format page contents',
     'customFieldsType13' => 'Select ( Radio )',
     'customFieldsType14' => 'Checkbox',
+    'customFieldsType16' => 'URL Link',
     'refreshAfterKEdit' => 'You will need to refresh this page after updating via drag & drop editor',
 
 

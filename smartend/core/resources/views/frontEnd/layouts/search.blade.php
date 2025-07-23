@@ -48,6 +48,10 @@
                                 <option value="0">{{ __('backend.no') }}</option>
                             </select>
                         </div>
+                    @elseif($customField->type ==16)
+                        <div class="col-sm-3 m-b">
+                            {!! Form::url('customField_'.$customField->id,@$_GET['customField_'.$customField->id], array('placeholder' => $cf_title,'class' => 'form-control','id'=>'customField_'.$customField->id,$cf_required=>'', 'dir'=>$cf_land_dir)) !!}
+                        </div>
                     @elseif($customField->type ==7 || $customField->type ==6 || $customField->type ==13)
                         <div class="col-sm-3 m-b">
                             <select name="{{'customField_'.$customField->id}}"

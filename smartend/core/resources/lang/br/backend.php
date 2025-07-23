@@ -653,9 +653,10 @@ return array(
     // v9.1
     'clickToUseDragAndDropEditor' => 'Usar editor de arrastar e soltar',
     'savePageToUseDragAndDropEditor' => 'Salve a página primeiro se você deseja usar o editor de arrastar e soltar para formatar o conteúdo da página',
-    'customFieldsType13' => 'Seleção (Radio)',
+        'customFieldsType13' => 'Select ( Radio )',
     'customFieldsType14' => 'Checkbox',
-    'refreshAfterKEdit' => 'Você precisará atualizar esta página após a atualização via editor de arrastar e soltar',
+    'customFieldsType16' => 'Link URL',
+    'refreshAfterKEdit' => 'You will need to refresh this page after updating via drag & drop editor',
 
 
     // v10.0

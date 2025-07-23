@@ -460,6 +460,16 @@ $PhoneFieldsIds = [];
                                         </label>
                                     </div>
                                 </div>
+                            @elseif($customField->type ==16)
+                                {{--URL Link--}}
+                                <div class="form-group row">
+                                    <label for="{{'customField_'.$customField->id}}"
+                                           class="col-sm-2 form-control-label">{!!  $cf_title !!}
+                                        {!! $cf_land_identifier !!}</label>
+                                    <div class="col-sm-10">
+                                        {!! Form::url('customField_'.$customField->id,$customField->default_value, array('placeholder' => 'https://example.com','class' => 'form-control','id'=>'customField_'.$customField->id,$cf_required=>'', 'dir'=>'ltr')) !!}
+                                    </div>
+                                </div>
                             @elseif($customField->type ==13)
                                 {{--Radio--}}
                                 <div class="form-group row">

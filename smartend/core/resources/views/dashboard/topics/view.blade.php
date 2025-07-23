@@ -314,10 +314,21 @@ if ($WebmasterSection->$title_var != "") {
                                                     </div>
                                                 </div>
                                             @elseif($customField->type ==14)
-                                                {{--Photo File--}}
+                                                {{--Checkbox--}}
                                                 <div class="row field-row {!! $customField->css_class !!}">
                                                     <div class="col-sm-12">
                                                         <i class="fa  inline {{ (($cf_saved_val == 1) ? "fa-check text-success" : "fa-times text-danger") }}"></i> {{ (($cf_saved_val == 1) ? __('backend.yes') : __('backend.no')) }}
+                                                    </div>
+                                                </div>
+
+                                            @elseif($customField->type ==16)
+                                                {{--URL Link--}}
+                                                <div class="row field-row {!! $customField->css_class !!}">
+                                                    <div class="col-sm-2">
+                                                        <strong>{!!  $cf_title !!} :</strong>
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <a href="{{ (filter_var($cf_saved_val, FILTER_VALIDATE_URL) ? $cf_saved_val : 'http://' . $cf_saved_val) }}" target="_blank" rel="noopener noreferrer">{{ $cf_saved_val }}</a>
                                                     </div>
                                                 </div>
 

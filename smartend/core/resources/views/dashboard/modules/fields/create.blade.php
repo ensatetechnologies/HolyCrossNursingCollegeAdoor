@@ -58,6 +58,13 @@
                     </div>
                     <div style="margin-bottom: 5px;">
                         <label class="ui-check ui-check-md">
+                            {!! Form::radio('type','16',false, array('id' => 'type16','class'=>'has-value')) !!}
+                            <i class="dark-white"></i>
+                            {{ __('backend.customFieldsType16') }}
+                        </label>
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <label class="ui-check ui-check-md">
                             {!! Form::radio('type','4',false, array('id' => 'type4','class'=>'has-value')) !!}
                             <i class="dark-white"></i>
                             {{ __('backend.customFieldsType4') }}

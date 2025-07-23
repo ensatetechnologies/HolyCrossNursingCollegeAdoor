@@ -290,6 +290,11 @@ class TopicsController extends Controller
                                 }
                             } elseif ($customField->type == 14) {
                                 $cf_data = "<div class='text-center'> <i class=\"fa " . (($cf_saved_val == 1) ? "fa-check text-success" : "fa-times text-danger") . " inline\"></i> " . (($cf_saved_val == 1) ? __('backend.yes') : __('backend.no')) . "</div>";
+                            } elseif ($customField->type == 16) {
+                                // URL Link
+                                if ($cf_saved_val != "") {
+                                    $cf_data = "<a href='" . (filter_var($cf_saved_val, FILTER_VALIDATE_URL) ? $cf_saved_val : 'http://' . $cf_saved_val) . "' target='_blank'>" . $cf_saved_val . "</a>";
+                                }
                             } elseif ($customField->type == 6 || $customField->type == 13) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
                                 $cf_details_var2 = "details_" . config('smartend.default_language');
@@ -747,6 +752,14 @@ class TopicsController extends Controller
                                 $field_value = @str_replace("+", "", $request->{$field_value_var . "_phone_full"});
                             } elseif ($customField->type == 14) {
                                 $field_value = ($request->$field_value_var == 1) ? 1 : 0;
+                            } elseif ($customField->type == 16) {
+                                // URL field - validate and format URL
+                                $field_value = strip_tags($request->$field_value_var);
+                                if ($field_value && !filter_var($field_value, FILTER_VALIDATE_URL)) {
+                                    if (!preg_match('/^https?:\/\//', $field_value)) {
+                                        $field_value = 'http://' . $field_value;
+                                    }
+                                }
                             } elseif ($customField->type == 5) {
                                 if ($request->$field_value_var != "") {
                                     $field_value = Helper::dateForDB($request->$field_value_var, 1);
@@ -1065,6 +1078,14 @@ class TopicsController extends Controller
                                 }
                             } elseif ($customField->type == 14) {
                                 $field_value = ($request->$field_value_var == 1) ? 1 : 0;
+                            } elseif ($customField->type == 16) {
+                                // URL field - validate and format URL
+                                $field_value = strip_tags($request->$field_value_var);
+                                if ($field_value && !filter_var($field_value, FILTER_VALIDATE_URL)) {
+                                    if (!preg_match('/^https?:\/\//', $field_value)) {
+                                        $field_value = 'http://' . $field_value;
+                                    }
+                                }
                             } elseif ($customField->type == 5) {
                                 if ($request->$field_value_var != "") {
                                     $field_value = Helper::dateForDB($request->$field_value_var, 1);

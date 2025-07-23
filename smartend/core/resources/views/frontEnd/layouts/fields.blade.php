@@ -91,6 +91,16 @@
                                         {!! (($cf_saved_val == 1) ? "&check;" : "&bigotimes;"); !!} {!!  $cf_title !!} {!! "(".(($cf_saved_val == 1) ? __('backend.yes') : __('backend.no')).")" !!}
                                     </div>
                                 </div>
+                            @elseif($customField->type ==16)
+                                {{--URL Link--}}
+                                <div class="row field-row">
+                                    <div class="col-lg-3">
+                                        {!!  $cf_title !!} :
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <a href="{{ (filter_var($cf_saved_val, FILTER_VALIDATE_URL) ? $cf_saved_val : 'http://' . $cf_saved_val) }}" target="_blank" rel="noopener noreferrer">{{ $cf_saved_val }}</a>
+                                    </div>
+                                </div>
                             @elseif($customField->type ==6 || $customField->type ==13)
                                 {{--Select--}}
                                 <div class="row field-row">

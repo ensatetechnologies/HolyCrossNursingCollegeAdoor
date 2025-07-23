@@ -131,7 +131,7 @@
             </div>
 
         @endif
-        @if(@count(@$MostViewedTopics) >0)
+        <!-- @if(@count(@$MostViewedTopics) >0)
             <div class="widget mb-4 d-none d-md-block">
                 <h5 class="widget-title">{{ __('frontend.mostViewed') }}</h5>
 
@@ -140,7 +140,7 @@
                 @endforeach
 
             </div>
-        @endif
+        @endif -->
 
         @include('frontEnd.layouts.banners',["BannersSettingsId"=>Helper::GeneralWebmasterSettings("side_banners_section_id")])
 

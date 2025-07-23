@@ -217,6 +217,13 @@
                                                 } elseif ($customField->type == 14) {
                                                     $cf_data = (($cf_saved_val == 1) ? "&check;" : "&bigotimes;") . "  " . " (" . (($cf_saved_val == 1) ? __('backend.yes') : __('backend.no')) . ")";
 
+                                                } elseif ($customField->type == 16) {
+                                                    // URL Link
+                                                    if ($cf_saved_val != "") {
+                                                        $url = filter_var($cf_saved_val, FILTER_VALIDATE_URL) ? $cf_saved_val : 'http://' . $cf_saved_val;
+                                                        $cf_data = "<a href='" . $url . "' target='_blank' rel='noopener noreferrer'><i class='fa fa-external-link'></i> " . $cf_saved_val . "</a>";
+                                                    }
+
                                                 } elseif ($customField->type == 7) {
                                                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
                                                     $cf_details_var2 = "details_" . config('smartend.default_language');

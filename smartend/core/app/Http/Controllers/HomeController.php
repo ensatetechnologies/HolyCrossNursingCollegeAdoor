@@ -83,6 +83,7 @@ class HomeController extends Controller
                     $query->whereNull('expire_date')
                         ->orWhere('expire_date', '>=', now());
                 })
+                ->with('fields')
                 ->orderby('row_no', 'asc')
                 ->get();
 
@@ -933,6 +934,15 @@ class HomeController extends Controller
                             $field_value = @str_replace("+", "", $request->{$field_value_var . "_phone_full"});
                         } elseif ($customField->type == 14) {
                             $field_value = ($request->$field_value_var == 1) ? 1 : 0;
+                        } elseif ($customField->type == 16) {
+                            // URL Link - clean and validate
+                            $field_value = trim($request->$field_value_var);
+                            if ($field_value && !filter_var($field_value, FILTER_VALIDATE_URL)) {
+                                // If not a valid URL, add http:// prefix
+                                if (!preg_match('/^https?:\/\//', $field_value)) {
+                                    $field_value = 'http://' . $field_value;
+                                }
+                            }
                         } elseif ($customField->type == 5) {
                             if ($request->$field_value_var != "") {
                                 $field_value = Helper::dateForDB($request->$field_value_var, 1);
